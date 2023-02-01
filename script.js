@@ -9,11 +9,14 @@ function renderMenu(){
    <div class="icon">${food.emoji}</div>
    <div class="food-desc">
         <h2>${food.name}</h2>
-        <p>${food.ingredients}</p>
-        <p>${food.price}</p>
+        <p class="grey">${food.ingredients}</p>
+        <p class="price">$${food.price}</p>
    </div>
    </div>
-   <div class="add-food"></div>
+   <div class="add-food">
+   <button class="btn-style">+</button>
+   
+   </div>
    
    
    </div>`
