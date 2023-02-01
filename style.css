@@ -21,10 +21,6 @@ header{
     
 }
 
-
-
-
-
 header{
     color: #ffffff;
 }
@@ -36,4 +32,32 @@ header p{
 
 h1{
     font-size: 2.5rem;
+}
+
+
+main{
+    max-width: 600px;
+    margin-top: 2rem;
+    padding: 0rem 2rem;
+    width: 100%;
+}
+
+.menu-item{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid gray;
+}
+
+.food-info{
+    display: flex;
+}
+
+.icon{
+    font-size: 4rem;
+    margin-right: 1rem;
+}
+
+.food-desc{
+    display: flex;
+    flex-direction: column;
 }
