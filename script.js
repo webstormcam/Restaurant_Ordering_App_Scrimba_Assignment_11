@@ -1,5 +1,20 @@
 import { menuArray } from './data.js'
 
+
+
+document.addEventListener('click',function(e){
+    
+})
+
+
+
+
+
+
+
+
+
+
 function renderMenu(){
     const menu = document.getElementById('menu')
     let options =''
