@@ -4,16 +4,21 @@
 
 body{
     font-family: 'Smythe', cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 header{
     background-image: url(images/Hamburger_Image.jpg);
     background-repeat: no-repeat;
-    
-    background-position: right;
+    max-width: 600px;
+    width: 100%;
+    background-position: center right;
     background-size: cover;
     padding: 2.5rem;
     padding-bottom: 3.5rem;
+    
 }
 
 

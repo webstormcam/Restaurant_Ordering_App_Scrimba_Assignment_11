@@ -1,3 +1,10 @@
 import { menuArray } from './data.js'
 
-console.log(`This is the menu ${menuArray}`)
+function renderMenu(){
+    for(let food of menuArray){
+   
+    }
+}
+
+
+renderMenu()
