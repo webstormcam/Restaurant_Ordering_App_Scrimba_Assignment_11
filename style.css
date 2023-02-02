@@ -88,3 +88,7 @@ main{
     border: 1px solid grey;
     cursor: pointer;
 }
+
+footer{
+    margin-top: 1.5rem;
+}

@@ -1,5 +1,13 @@
 import { menuArray } from './data.js'
+
+
+
 const orderedItems =[]
+
+
+
+
+
 
 
 document.addEventListener('click',function(e){
@@ -10,13 +18,17 @@ document.addEventListener('click',function(e){
 })
 
 
+
+
+
+
 function purchaseItem(selectedItem){
 const ItemObj = menuArray.filter(function(food){
 return food.name === selectedItem.foodType
 })[0]
 
 orderedItems.push(ItemObj)
-purchases()
+renderPurchases()
 }
 
 
@@ -52,14 +64,16 @@ function renderMenu(){
 }
 
 
-function purchases(){
+function renderPurchases(){
     const order = document.getElementById('order')
     let list =''
     let total = 0
     for(let ordered of orderedItems){
        total+=ordered.price
+       list +=`<h2>Your order</h2>`
     }
     console.log(total)
+    order.innerHTML = list
 }
 
 
