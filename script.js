@@ -72,12 +72,19 @@ function renderPurchases(){
     let total = 0
     for(let ordered of orderedItems){
        list +=`
-       <div></div>
+       <div class="item">
+       <div class="name-remove">
+       <h2>${ordered.name}</h2>
+       <span class="grey">remove</span>
+       </div>
+      
+       <p class="render-price-style">$${ordered.price}</p>
+       </div>
        `
        total+=ordered.price
      priceOfItAll = `
        <h2>Total Price:</h2>
-       <p class="final-price">$${total}</p>
+       <p class="render-price-style">$${total}</p>
        `
     }
     purchased.innerHTML = list
