@@ -1,11 +1,23 @@
 import { menuArray } from './data.js'
-
+const orderedItems =[]
 
 
 document.addEventListener('click',function(e){
-    
+    if(e.target.dataset){
+      purchaseItem(e.target.dataset)
+    }
+   
 })
 
+
+function purchaseItem(selectedItem){
+const ItemObj = menuArray.filter(function(food){
+return food.name === selectedItem.foodType
+})[0]
+
+orderedItems.push(ItemObj)
+purchases()
+}
 
 
 
@@ -29,7 +41,7 @@ function renderMenu(){
    </div>
    </div>
    <div class="add-food">
-   <button class="btn-style">+</button>
+   <button data-food-type="${food.name}" class="btn-style">+</button>
    
    </div>
    
@@ -37,6 +49,17 @@ function renderMenu(){
    </div>`
     }
     menu.innerHTML+=options
+}
+
+
+function purchases(){
+    const order = document.getElementById('order')
+    let list =''
+    let total = 0
+    for(let ordered of orderedItems){
+       total+=ordered.price
+    }
+    console.log(total)
 }
 
 

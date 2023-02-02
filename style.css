@@ -86,4 +86,5 @@ main{
     height: 50px;
     color: grey;
     border: 1px solid grey;
+    cursor: pointer;
 }
