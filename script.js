@@ -65,15 +65,24 @@ function renderMenu(){
 
 
 function renderPurchases(){
-    const order = document.getElementById('order')
+    const purchased = document.getElementById('purchased')
+    const totalPrice = document.getElementById('total')
     let list =''
+    let priceOfItAll =''
     let total = 0
     for(let ordered of orderedItems){
+       list +=`
+       <div></div>
+       `
        total+=ordered.price
-       list +=`<h2>Your order</h2>`
+     priceOfItAll = `
+       <h2>Total Price:</h2>
+       <p class="final-price">$${total}</p>
+       `
     }
-    console.log(total)
-    order.innerHTML = list
+    purchased.innerHTML = list
+    totalPrice.innerHTML= priceOfItAll
+    order.classList.add('show')
 }
 
 

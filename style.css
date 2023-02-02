@@ -89,6 +89,37 @@ main{
     cursor: pointer;
 }
 
+.hide{
+    display: none;
+}
+
+.show{
+display: block;
+}
+
+.order-header{
+    text-align: center;
+}
+
+.purchased-style{
+    margin-top: 2rem;
+    border-bottom: 4px solid black;
+}
+
 footer{
     margin-top: 1.5rem;
+    padding: 0rem 2rem;
+    width: 100%;
+    max-width: 600px;
+}
+
+.total-style{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+.final-price{
+    font-size: 1.5rem;
 }
