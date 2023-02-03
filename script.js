@@ -16,9 +16,15 @@ document.addEventListener('click',function(e){
     
     }
    
-    if(e.target.dataset.item){
+   else if(e.target.dataset.item){
         deleteItem(e.target.dataset.item)
     }
+
+    else if(e.target.dataset.spend){
+        console.log('LOL')
+    }
+
+
    
 })
 
