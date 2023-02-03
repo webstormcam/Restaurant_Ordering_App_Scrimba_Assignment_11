@@ -40,6 +40,11 @@ renderPurchases()
 
 function deleteItem(selectedItem){
 orderedItems.splice(selectedItem,1)
+if(orderedItems.length<1){
+    const orders =  document.getElementById('order')
+    orders.classList.remove('show')
+    return
+}
 renderPurchases()
 
 }
