@@ -11,8 +11,13 @@ const orderedItems =[]
 
 
 document.addEventListener('click',function(e){
-    if(e.target.dataset){
-      purchaseItem(e.target.dataset)
+    if(e.target.dataset.food){
+      purchaseItem(e.target.dataset.food)
+    
+    }
+   
+    if(e.target.dataset.item){
+        deleteItem(e.target.dataset.item)
     }
    
 })
@@ -24,13 +29,20 @@ document.addEventListener('click',function(e){
 
 function purchaseItem(selectedItem){
 const ItemObj = menuArray.filter(function(food){
-return food.name === selectedItem.foodType
+return food.name === selectedItem
 })[0]
 
 orderedItems.push(ItemObj)
 renderPurchases()
 }
 
+
+
+function deleteItem(selectedItem){
+orderedItems.splice(selectedItem,1)
+renderPurchases()
+
+}
 
 
 
@@ -53,7 +65,7 @@ function renderMenu(){
    </div>
    </div>
    <div class="add-food">
-   <button data-food-type="${food.name}" class="btn-style">+</button>
+   <button data-food="${food.name}" class="btn-style">+</button>
    
    </div>
    
@@ -70,18 +82,19 @@ function renderPurchases(){
     let list =''
     let priceOfItAll =''
     let total = 0
-    for(let ordered of orderedItems){
+    for(let i=0;i<orderedItems.length;i++){
+        
        list +=`
        <div class="item">
        <div class="name-remove">
-       <h2>${ordered.name}</h2>
-       <span class="grey">remove</span>
+       <h2>${orderedItems[i].name}</h2>
+       <span data-item="${[i]}"  class="grey">remove</span>
        </div>
       
-       <p class="render-price-style">$${ordered.price}</p>
+       <p class="render-price-style">$${orderedItems[i].price}</p>
        </div>
        `
-       total+=ordered.price
+       total+=orderedItems[i].price
      priceOfItAll = `
        <h2>Total Price:</h2>
        <p class="render-price-style">$${total}</p>
@@ -90,6 +103,7 @@ function renderPurchases(){
     purchased.innerHTML = list
     totalPrice.innerHTML= priceOfItAll
     order.classList.add('show')
+    console.log(orderedItems)
 }
 
 

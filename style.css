@@ -149,6 +149,7 @@ footer{
 
 .grey{
     color: grey;
+    cursor: pointer;
 }
 
 .name-remove{
