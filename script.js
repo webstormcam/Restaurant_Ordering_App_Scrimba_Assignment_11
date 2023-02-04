@@ -21,7 +21,8 @@ document.addEventListener('click',function(e){
     }
 
     else if(e.target.dataset.spend){
-        console.log('LOL')
+        const modal = document.getElementById('modal')
+        modal.style.display="flex"
     }
 
 

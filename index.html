@@ -23,7 +23,16 @@
         <div class="total-style" id="total"></div>
         <button data-spend="btn" class="order-button">Complete Order</button>
     </footer>
-    <div class="modal" id="modal"></div>
+    <div class="modal" id="modal">
+        <h2>Enter your card details</h2>
+        <form action="GET">
+            <input class="info" type="text" name="customerName" id="customerName" placeholder="Enter your name" required>
+            <input class="info" type="text" name="cardNum" id="cardNum" placeholder="Enter card number" required>
+            <input class="info" type="text" name="CVV" id="CVV" placeholder=" Enter CVV">
+            <button data-buy="btn" class="order-button">Pay</button>
+            
+        </form>
+    </div>
     <script type="module" src="script.js"></script>
 
 </body>
