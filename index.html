@@ -24,12 +24,12 @@
         <button data-spend="btn" class="order-button">Complete Order</button>
     </footer>
     <div class="modal" id="modal">
-        <h2>Enter your card details</h2>
-        <form action="GET">
+        <h2 class="modal-header">Enter your card details</h2>
+        <form id="form" action="#" >
             <input class="info" type="text" name="customerName" id="customerName" placeholder="Enter your name" required>
             <input class="info" type="text" name="cardNum" id="cardNum" placeholder="Enter card number" required>
-            <input class="info" type="text" name="CVV" id="CVV" placeholder=" Enter CVV">
-            <button data-buy="btn item-purchase-remove-btn" class="order-button">Pay</button>
+            <input class="info" type="text" name="CVV" id="CVV" placeholder=" Enter CVV" required>
+            <button data-buy="btn item-purchase-remove-btn" class="order-button" id="pay">Pay</button>
             
         </form>
     </div>

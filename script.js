@@ -28,6 +28,19 @@ document.addEventListener('click',function(e){
         }
         modal.style.display="flex"
         
+    } 
+    else if(e.target.dataset.buy){
+        const form = document.getElementById('form')
+        function handleForm(e){
+            e.preventDefault()
+        }
+        form.addEventListener('submit',handleForm)
+        const customerName = document.getElementById('customerName').value
+        // const modal = document.getElementById('modal')
+        // modal.style.display="none"
+       
+        console.log(customerName)
+        renderThanks(customerName)
     }
 
 
@@ -122,6 +135,13 @@ function renderPurchases(){
     order.classList.add('show')
     console.log(orderedItems)
 }
+
+
+function renderThanks(name){
+     
+}
+
+
 
 
 renderMenu()
