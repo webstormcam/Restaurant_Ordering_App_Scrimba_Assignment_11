@@ -7,6 +7,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 
 header{
@@ -145,6 +146,7 @@ footer{
     margin-top: 1rem;
     margin-bottom: 1rem;
     border: none;
+    cursor: pointer;
 }
 
 .grey{
@@ -155,4 +157,9 @@ footer{
 .name-remove{
     display: flex;
     align-items: center;
+}
+
+.modal{
+    display: none;
+    position: absolute;
 }
