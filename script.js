@@ -22,7 +22,12 @@ document.addEventListener('click',function(e){
 
     else if(e.target.dataset.spend){
         const modal = document.getElementById('modal')
+        const purchaseButtons = document.getElementsByClassName('item-purchase-remove-btn')
+        for(let button of purchaseButtons){
+            button.disabled = true
+        }
         modal.style.display="flex"
+        
     }
 
 
@@ -77,7 +82,7 @@ function renderMenu(){
    </div>
    </div>
    <div class="add-food">
-   <button data-food="${food.name}" class="btn-style">+</button>
+   <button data-food="${food.name}" class="item-purchase-remove-btn btn-style">+</button>
    
    </div>
    
@@ -100,7 +105,7 @@ function renderPurchases(){
        <div class="item">
        <div class="name-remove">
        <h2>${orderedItems[i].name}</h2>
-       <span data-item="${[i]}"  class="grey">remove</span>
+       <button  data-item="${[i]}"  class="grey item-purchase-remove-btn">remove</button>
        </div>
       
        <p class="render-price-style">$${orderedItems[i].price}</p>

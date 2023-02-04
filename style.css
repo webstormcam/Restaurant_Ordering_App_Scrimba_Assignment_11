@@ -152,6 +152,10 @@ footer{
 .grey{
     color: grey;
     cursor: pointer;
+    
+    background-color: #fff;
+    border: none;
+    font-size: 1rem;
 }
 
 .name-remove{
