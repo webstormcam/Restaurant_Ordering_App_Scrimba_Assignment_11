@@ -2,7 +2,7 @@ import { menuArray } from './data.js'
 
 
 
-const orderedItems =[]
+let orderedItems =[]
 
 
 
@@ -95,6 +95,16 @@ function renderMenu(){
 
 
 function renderPurchases(){
+    const orderedFoods = document.getElementById('order')
+    orderedFoods.innerHTML=`
+    <h2 class="order-header">Your order</h2>
+        <div class="purchased-style" id="purchased"></div>
+        <div class="total-style" id="total"></div>
+        <button data-spend="btn" class="order-button">Complete Order</button>
+    
+    
+    
+    `
     const purchased = document.getElementById('purchased')
     const totalPrice = document.getElementById('total')
     let list =''
@@ -125,8 +135,24 @@ function renderPurchases(){
 }
 
 
+const form = document.getElementById('form')
+form.addEventListener('submit',function(e){
+    e.preventDefault()
+  const customerName = document.getElementById('customerName').value
+  const modal = document.getElementById('modal').style.display="none"
+    form.reset()
+    const purchaseButtons = document.getElementsByClassName('item-purchase-remove-btn')
+    for(let button of purchaseButtons){
+        button.disabled = false
+    }
+    const orderArea = document.getElementById('order').innerHTML=""
+    orderedItems=[]
+    renderThanks(customerName)
+})
+
 function renderThanks(name){
-     
+const savedName = name;
+console.log(`Hello ${savedName}`)
 }
 
 
