@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="reset.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Smythe&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Smythe&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Restaurant Ordering App</title>
 </head>
@@ -16,9 +16,11 @@
         <h1>Jimmy's Diner</h1>
         <p>The best burgers and pizzas in town.</p>
     </header>
-    <main id="menu"></main>
+    <main id="menu">
+        <!--Menu Items are rendered out here!-->
+    </main>
     <footer class="hide" id="order">
-        
+        <!--Selected items are rendered here and are shown to the user to purchase-->
     </footer>
     <div class="modal" id="modal">
         <h2 class="modal-header">Enter your card details</h2>
@@ -26,8 +28,7 @@
             <input class="info" type="text" name="customerName" id="customerName" placeholder="Enter your name" required>
             <input class="info" type="text" name="cardNum" id="cardNum" placeholder="Enter card number" required>
             <input class="info" type="text" name="CVV" id="CVV" placeholder=" Enter CVV" required>
-            <button data-buy="btn item-purchase-remove-btn" class="order-button" id="pay">Pay</button>
-            
+            <button data-buy="btn item-purchase-remove-btn" class="order-button" id="pay">Pay</button>       
         </form>
     </div>
     <script type="module" src="script.js"></script>

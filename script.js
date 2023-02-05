@@ -1,56 +1,35 @@
 import { menuArray } from './data.js'
 
-
-
 let orderedItems =[]
 
-
-
-
-
-
-
+//These are my buttons to select items, remove items, & disable items once the modal is open! 
 document.addEventListener('click',function(e){
     if(e.target.dataset.food){
       purchaseItem(e.target.dataset.food)
-    
     }
-   
    else if(e.target.dataset.item){
         deleteItem(e.target.dataset.item)
-    }
-
+   }
     else if(e.target.dataset.spend){
         const modal = document.getElementById('modal')
         const purchaseButtons = document.getElementsByClassName('item-purchase-remove-btn')
         for(let button of purchaseButtons){
             button.disabled = true
         }
-        modal.style.display="flex"
-        
-    } 
-    
-
-
-   
+        modal.style.display="flex"  
+    }   
 })
 
-
-
-
-
-
+//This function selects the item for purchase.
 function purchaseItem(selectedItem){
 const ItemObj = menuArray.filter(function(food){
 return food.name === selectedItem
 })[0]
-
 orderedItems.push(ItemObj)
 renderPurchases()
 }
 
-
-
+// This fuction removes items from the purchase area.
 function deleteItem(selectedItem){
 orderedItems.splice(selectedItem,1)
 if(orderedItems.length<1){
@@ -62,13 +41,7 @@ renderPurchases()
 
 }
 
-
-
-
-
-
-
-
+// This renders out the entire menu available.
 function renderMenu(){
     const menu = document.getElementById('menu')
     let options =''
@@ -83,17 +56,14 @@ function renderMenu(){
    </div>
    </div>
    <div class="add-food">
-   <button data-food="${food.name}" class="item-purchase-remove-btn btn-style">+</button>
-   
+        <button data-food="${food.name}" class="item-purchase-remove-btn btn-style">+</button>
    </div>
-   
-   
    </div>`
     }
     menu.innerHTML+=options
 }
 
-
+// This renders out the full list of items that the user has decided to purchase.
 function renderPurchases(){
     const orderedFoods = document.getElementById('order')
     orderedFoods.innerHTML=`
@@ -101,9 +71,6 @@ function renderPurchases(){
         <div class="purchased-style" id="purchased"></div>
         <div class="total-style" id="total"></div>
         <button data-spend="btn" class="order-button">Complete Order</button>
-    
-    
-    
     `
     const purchased = document.getElementById('purchased')
     const totalPrice = document.getElementById('total')
@@ -134,7 +101,7 @@ function renderPurchases(){
     console.log(orderedItems)
 }
 
-
+//This is all the logic that I created for the form to work! 
 const form = document.getElementById('form')
 form.addEventListener('submit',function(e){
     e.preventDefault()
@@ -150,6 +117,10 @@ form.addEventListener('submit',function(e){
     renderThanks(customerName)
 })
 
+
+
+//This is the function that runs at the end thanking the user for making a purchase! 
+
 function renderThanks(name){
 const savedName = name;
 const orderedFoods = document.getElementById('order')
@@ -157,14 +128,7 @@ orderedFoods.innerHTML=`
 <div class="thanks">
 <p>Thanks, ${savedName}! Your order is on its way!</p>
 </div>
-
-
-
-
 `
 }
-
-
-
 
 renderMenu()
