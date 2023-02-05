@@ -117,10 +117,7 @@ form.addEventListener('submit',function(e){
     renderThanks(customerName)
 })
 
-
-
-//This is the function that runs at the end thanking the user for making a purchase! 
-
+//This is the function that runs at the end thanking the user for making a purchase.
 function renderThanks(name){
 const savedName = name;
 const orderedFoods = document.getElementById('order')
