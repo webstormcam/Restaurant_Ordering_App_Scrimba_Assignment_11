@@ -152,7 +152,16 @@ form.addEventListener('submit',function(e){
 
 function renderThanks(name){
 const savedName = name;
-console.log(`Hello ${savedName}`)
+const orderedFoods = document.getElementById('order')
+orderedFoods.innerHTML=`
+<div class="thanks">
+<p>Thanks, ${savedName}! Your order is on its way!</p>
+</div>
+
+
+
+
+`
 }
 
 
