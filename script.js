@@ -98,7 +98,7 @@ function renderPurchases(){
     purchased.innerHTML = list
     totalPrice.innerHTML= priceOfItAll
     order.classList.add('show')
-    console.log(orderedItems)
+   
 }
 
 //This is all the logic that I created for the form to work! 
